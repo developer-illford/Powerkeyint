@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Approve Sign-Up</title>
+    <!-- Font Awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+     <!-- Font Awesome link -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+     <script src="https://kit.fontawesome.com/6c53136549.js" crossorigin="anonymous"></script>
+ 
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        #container {
+            background-color: #ffffff;
+            border: 1px solid #E62B00;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 40px;
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        #container h2 {
+            color: #E62B00;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        #container p {
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        #container button {
+            background-color: #E62B00;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #container button:hover {
+            background-color: #ffffff;
+            color: #E62B00;
+            border: 1px solid #E62B00;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h2>Approve New User</h2>
+        <p id="userEmail"></p>
+        <button id="addUserBtn">Add New User</button>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-database.js"></script>
+    <script>
+        // Your Firebase configuration
+       var firebaseConfig = {
+  apiKey: "AIzaSyAXzO9gcjdPf8P8-z476SsryKUgNVAuneA",
+  authDomain: "powerkeyint.firebaseapp.com",
+  databaseURL: "https://powerkeyint-default-rtdb.firebaseio.com",
+  projectId: "powerkeyint",
+  storageBucket: "powerkeyint.appspot.com",
+  messagingSenderId: "762411477471",
+  appId: "1:762411477471:web:4d7497bfa3a1ade7817c6a"
+};
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const email = urlParams.get('email');
+            const userEmailElement = document.getElementById('userEmail');
+            userEmailElement.textContent = `User Email: ${decodeURIComponent(email)}`;
+
+            document.getElementById('addUserBtn').addEventListener('click', function() {
+                addUser(email);
+            });
+        });
+
+        function addUser(email) {
+            const auth = firebase.auth();
+            const db = firebase.database();
+
+            // Create a new user with a temporary password
+            auth.createUserWithEmailAndPassword(email, "temporaryPassword123")
+                .then((userCredential) => {
+                    console.log('User created:', userCredential);
+
+                    // Send password reset email
+                    auth.sendPasswordResetEmail(email)
+                        .then(() => {
+                            console.log('Password reset email sent successfully');
+                            alert('User added and password reset email sent!');
+                        })
+                        .catch((error) => {
+                            console.error('Error sending password reset email:', error);
+                            alert('Failed to send password reset email.');
+                        });
+
+                    // Add user to the database
+                    const userId = userCredential.user.uid;
+                    db.ref('users/' + userId).set({
+                        email: email,
+                        approved: true
+                    })
+                    .then(() => {
+                        console.log('User added to database successfully');
+                    })
+                    .catch((error) => {
+                        console.error('Error adding user to database:', error);
+                        alert('Failed to add user to database.');
+                    });
+
+                })
+                .catch((error) => {
+                    console.error('Error creating user:', error);
+                    alert('Failed to create user.');
+                });
+        }
+    </script>
+</body>
+</html>

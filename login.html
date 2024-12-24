@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power Key International-Login</title>
+    <!-- <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon/favicon-32x32.webp"> -->
+
+    <link rel="shortcut icon" type="image/jpg" href="favicon.webp">
+</head>
+
+<body>
+    <section class="login_base">
+        <div class="login-box">
+            <p>Login</p>
+            <form id="mainForm">
+                <div class="user-box">
+                    <input required="" name="" type="text" id="emailInp">
+                    <label>Email</label>
+                </div>
+                <div class="user-box">
+                    <input required="" name="" type="password" id="passwordInp">
+                    <label>Password</label>
+                </div>
+                <button type="submit"
+                    style="font-weight: bold; cursor: pointer; border-radius: 0.5rem; padding: 3%; width: max-content; height: auto; border: 1px solid #fff; background-color: #000000e3; color: #ffffff;">
+                    LOGIN
+                </button>
+                <button onclick="redirectToHome()"
+                    style="cursor: pointer; border: 1px solid #fff; background-color: #000000e3; color: #ffffff; margin-left: 30%; padding: 3%; border-radius: 0.5rem;">
+                    <i style="color: #ffffff77;" class="fa-solid fa-arrow-left"></i>&nbsp;&nbsp;Return home
+                </button>
+                <p style="text-align:center; margin-top: 10px;">
+                    <a href="#" id="forgotPasswordLink">FORGOT PASSWORD?</a>
+                </p>
+                <p style="text-align:center; margin-top: 0px;">
+                    <a href="#" id="signUpLink">SIGN UP</a>
+                </p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Import the Firebase core (always required) -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
+    <!-- Import only the Firebase database module -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase.js"></script>
+    <script src="js/fireconfig.js"></script>
+    <script src="js/login.js"></script>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
+        import { getDatabase, get, ref, child } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js";
+        import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js";
+
+      // Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyAXzO9gcjdPf8P8-z476SsryKUgNVAuneA",
+  authDomain: "powerkeyint.firebaseapp.com",
+  databaseURL: "https://powerkeyint-default-rtdb.firebaseio.com",
+  projectId: "powerkeyint",
+  storageBucket: "powerkeyint.appspot.com",
+  messagingSenderId: "762411477471",
+  appId: "1:762411477471:web:4d7497bfa3a1ade7817c6a"
+};
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        let email = document.getElementById('emailInp');
+        let password = document.getElementById('passwordInp');
+        let mainForm = document.getElementById('mainForm');
+        let forgotPasswordLink = document.getElementById('forgotPasswordLink');
+        let signUpLink = document.getElementById('signUpLink');
+
+        let signInUser = evt => {
+            evt.preventDefault();
+
+            signInWithEmailAndPassword(auth, email.value, password.value)
+                .then((credentials) => {
+                    console.log(credentials);
+                    window.location.href = "admin.html";
+                })
+                .catch((error) => {
+                    alert(error.message);
+                    console.log(error.code);
+                    console.log(error.message);
+                });
+        }
+
+        let handleForgotPassword = evt => {
+            evt.preventDefault();
+            if (email.value) {
+                sendPasswordResetEmail(auth, email.value)
+                    .then(() => {
+                        alert('Password reset email sent! Check your inbox.');
+                    })
+                    .catch((error) => {
+                        alert(error.message);
+                        console.log(error.code);
+                        console.log(error.message);
+                    });
+            } else {
+                alert('Please enter your email address to reset your password.');
+            }
+        }
+
+        let handleSignUp = evt => {
+            evt.preventDefault();
+            let email = prompt('Please enter your email for sign up:');
+            if (email) {
+                let xhr = new XMLHttpRequest();
+                xhr.open("POST", "signup.php", true);
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        alert(xhr.responseText);
+                    }
+                };
+                xhr.send("email=" + email);
+            }
+        }
+
+        mainForm.addEventListener('submit', signInUser);
+        forgotPasswordLink.addEventListener('click', handleForgotPassword);
+        signUpLink.addEventListener('click', handleSignUp);
+
+        function redirectToHome() {
+            window.location.href = "index.html";
+        }
+    </script>
+
+    <style>
+        /* the color palette */
+        :root {
+            --theme_color3: #FFFFFF;
+
+            --dark_bottom: linear-gradient(to bottom, #E62B00, #E25D00);
+            --dark_top: linear-gradient(to top, #E62B00, #E25D00);
+        }
+
+        body {
+            margin: 0;
+            width: 100%;
+        }
+
+        .login_base {
+            width: 100%;
+            height: 100vh;
+            background-image: var(--dark_top);
+        }
+
+        .login-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            padding: 40px;
+            margin: 20px auto;
+            transform: translate(-50%, -55%);
+            background: rgba(255, 255, 255, 0.9);
+            box-sizing: border-box;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+            border-radius: 10px;
+        }
+
+        @media screen and (max-width:768px) {
+            .login-box {
+                width: 90%;
+            }
+        }
+
+        .login-box p:first-child {
+            margin: 0 0 30px;
+            padding: 0;
+            color: #000000;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .login-box .user-box {
+            position: relative;
+        }
+
+        .login-box .user-box input {
+            width: 100%;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #000000;
+            margin-bottom: 30px;
+            border: none;
+            border-bottom: 1px solid #000000;
+            outline: none;
+            background: transparent;
+        }
+
+        .login-box .user-box label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #000000;
+            pointer-events: none;
+            transition: .5s;
+        }
+
+        .login-box .user-box input:focus~label,
+        .login-box .user-box input:valid~label {
+            top: -20px;
+            left: 0;
+            color: #000000;
+            font-size: 12px;
+        }
+
+        .login-box form a {
+            position: relative;
+            display: inline-block;
+            padding: 10px 20px;
+            font-weight: bold;
+            color: #000000;
+            font-size: 16px;
+            text-decoration: none;
+            text-transform: uppercase;
+            overflow: hidden;
+            transition: .5s;
+            margin-top: 10px;
+            letter-spacing: 3px
+        }
+
+        /* .login-box a:hover {
+            background: #020202;
+            color: #272727;
+            border-radius: 5px;
+        } */
+
+        .login-box a span {
+            position: absolute;
+            display: block;
+        }
+
+        .login-box a span:nth-child(1) {
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #000000);
+            animation: btn-anim1 1.5s linear infinite;
+        }
+
+        @keyframes btn-anim1 {
+            0% {
+                left: -100%;
+            }
+
+            50%,
+            100% {
+                left: 100%;
+            }
+        }
+
+        .login-box a span:nth-child(2) {
+            top: -100%;
+            right: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(180deg, transparent, #000000);
+            animation: btn-anim2 1.5s linear infinite;
+            animation-delay: .375s
+        }
+
+        @keyframes btn-anim2 {
+            0% {
+                top: -100%;
+            }
+
+            50%,
+            100% {
+                top: 100%;
+            }
+        }
+
+        .login-box a span:nth-child(3) {
+            bottom: 0;
+            right: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(270deg, transparent, #000000);
+            animation: btn-anim3 1.5s linear infinite;
+            animation-delay: .75s
+        }
+
+        @keyframes btn-anim3 {
+            0% {
+                right: -100%;
+            }
+
+            50%,
+            100% {
+                right: 100%;
+            }
+        }
+
+        .login-box a span:nth-child(4) {
+            bottom: -100%;
+            left: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(360deg, transparent, #000000);
+            animation: btn-anim4 1.5s linear infinite;
+            animation-delay: 1.125s
+        }
+
+        @keyframes btn-anim4 {
+            0% {
+                bottom: -100%;
+            }
+
+            50%,
+            100% {
+                bottom: 100%;
+            }
+        }
+    </style>
+</body>
+
+</html>

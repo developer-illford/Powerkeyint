@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power Key International-Admin</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="shortcut icon" type="image/jpg" href="favicon.webp">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+    <!-- Font Awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <!-- Font Awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="https://kit.fontawesome.com/6c53136549.js" crossorigin="anonymous"></script>
+
+
+
+    <!--================= BIG SHOULDER FONT LINK ================= -->
+    <link href='https://fonts.googleapis.com/css?family=Big Shoulders Text' rel='stylesheet'>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
+    <style>
+        .row {
+            width: 100%;
+            margin: 0 !important;
+        }
+
+        .footer_container {
+            width: 100%;
+            height: auto;
+            border-top: 1px solid black;
+            position: relative;
+        }
+
+        .footer_col1 {
+            padding: 0 !important;
+        }
+
+        .footer_col2 {
+            padding: 0 !important;
+        }
+
+        .footer_col1_rib1 {
+            width: 100%;
+            height: 150px;
+        }
+
+        .footer_col1_rib2 {
+            width: 100%;
+            height: 700px;
+            background-color: #111111;
+        }
+
+        .footer_col1_subcsribe_container {
+            position: absolute;
+            bottom: 400px;
+            left: 5%;
+            padding: 2%;
+            width: max-content;
+            height: 450px;
+            border-top-right-radius: 3rem;
+            background-image: linear-gradient(to bottom, #F7E91C, #FE820A, #CC0D0C);
+        }
+
+        .footer_col1_subcsribe_container h3 {
+            color: #ffffff;
+        }
+
+        .footer_col1_subcsribe_container p {
+            color: #ffffff;
+            font-weight: 100;
+        }
+
+        .footer_col1_subcsribe_container input {
+            width: 100%;
+            height: 50px;
+            border: none;
+            outline: none;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+
+        .footer_col1_subcsribe_container button {
+            background-color: #000000;
+            border: none;
+            color: #ffffff;
+            padding: 0.8rem 2rem;
+            margin-top: 2%;
+        }
+
+        .footer_col2_rib1 {
+            width: 100%;
+            height: 150px !important;
+            padding-top: 6%;
+            padding-bottom: 5%;
+
+        }
+
+        .footer_col2_rib2 {
+            width: 100%;
+            height: 700px;
+            padding-top: 5%;
+            background-color: #111111;
+        }
+
+        .footer_col2_rib1 {
+            width: 100%;
+            /* height: 120px; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-left: 3%;
+        }
+
+        .footer_head_item {
+            display: flex;
+
+            align-items: center;
+            padding-bottom: 3%;
+        }
+
+        .footer_head_item img {
+            width: 20%;
+            height: auto;
+            margin-right: 5%;
+        }
+
+        .footer_head_item1 {
+            display: flex;
+            align-items: center;
+        }
+
+        .footer_head_item_text {
+            width: 100%;
+        }
+
+        .footer_head_item1 img {
+            width: 13%;
+            height: auto;
+            margin-right: 5%;
+        }
+
+        .footer_col2_rib2_map_container {
+            padding-left: 25%;
+            padding-right: 10%;
+        }
+
+        .footer_col2_footer_items {
+            width: 100%;
+            height: auto;
+        }
+
+        .footer_col2_footer_items_col {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            margin-top: 4%;
+        }
+
+        .footer_col2_footer_items_col h3 {
+            color: #ffffff;
+            margin-bottom: 9%;
+        }
+
+        .footer_col2_footer_items_col a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 400;
+            font-family: "Poppins", sans-serif;
+            padding-bottom: 4%;
+            font-size: 110%;
+        }
+
+        .sub_subscribe_container {
+            padding: 8%;
+            width: 100%;
+            height: auto;
+            background-image: linear-gradient(to bottom, #E62B00, #E25D00);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+        }
+
+        .sub_subscribe_box {
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .sub_subscribe_box input {
+            width: 100%;
+            border: none;
+        }
+
+        .sub_subscribe_box button {
+            background-color: #000000;
+            border: none;
+            border-radius: 0.1rem;
+            color: #ffffff;
+            padding: 0.2rem;
+            width: 100%;
+            margin-bottom: 2%;
+        }
+
+        .subs_but {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer_basement_container {
+            width: 100%;
+            height: auto;
+            background-color: #111111;
+            display: flex;
+            justify-content: right;
+        }
+
+        .footer_basement_holder {
+            width: 90%;
+            height: auto;
+            border-top-left-radius: 2rem;
+            background-color: #000000;
+        }
+
+        .footer_basement_col1 {
+            text-align: left;
+        }
+
+        .footer_basement_col1_rib1 {
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            padding-left: 5%;
+            padding-top: 5%;
+            padding-bottom: 2%;
+
+        }
+
+        .footer_basement_col1_rib2 {
+            display: flex;
+            flex-direction: column;
+            /* align-items: center; */
+            justify-content: left;
+            padding-left: 5%;
+            padding-bottom: 5%;
+        }
+
+        .footer_basement_col1_rib1 a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 115%;
+            letter-spacing: 1px;
+            font-family: "Poppins", sans-serif;
+        }
+
+        .footer_basement_col1_rib2 a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 105%;
+            letter-spacing: 1px;
+            font-family: "Poppins", sans-serif;
+        }
+
+        .footer_basement_col2_sec {
+            padding-top: 3%;
+        }
+
+        .footer_basement_col2_sec a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 105%;
+            letter-spacing: 1px;
+            font-family: "Poppins", sans-serif;
+            padding-top: 2%;
+        }
+
+        .footer_basement_col2 {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding-bottom: 2%;
+        }
+
+        .footer_basement_col2 i {
+            color: #ffffff;
+            font-size: 150%;
+        }
+
+        .footer_head_item_text a {
+            text-decoration: none;
+            color: var(--theme_color2);
+        }
+
+        @media screen and (max-width: 500px) {
+            .footer_col2_rib1 {
+                padding-top: 12%;
+                padding-left: 12%;
+                padding-bottom: 10%;
+
+            }
+        }
+
+        @media screen and (max-width: 1128px) {
+            .footer_col2_footer_items_col a {
+                font-size: 85%;
+            }
+
+
+            .footer_basement_col1_rib1 a {
+                font-size: 90%;
+            }
+
+            .footer_basement_col1_rib2 a {
+                font-size: 90%;
+            }
+
+            .footer_basement_col2 a {
+                font-size: 90%;
+            }
+
+        }
+
+        @media screen and (max-width: 1104px) {
+            .footer_basement_col1_rib1 a {
+                font-size: 75%;
+            }
+
+            .footer_basement_col1_rib2 a {
+                font-size: 75%;
+            }
+
+            .footer_basement_col2 a {
+                font-size: 75%;
+            }
+        }
+
+
+        @media screen and (max-width: 1128px) {
+            .footer_col2_footer_items_col h3 {
+                margin-bottom: 2%
+            }
+
+            .footer_col2_footer_items_col {
+                margin-top: 1%;
+            }
+        }
+
+        @media screen and (min-width: 831px) {
+            .sub_subscribe_container {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 830px) {
+            .footer_col1 {
+                display: none;
+            }
+
+            .footer_col2 {
+                width: 100%;
+            }
+
+            .footer_col1_rib1 {
+                display: none;
+            }
+
+            .footer_col1_rib2 {
+                display: none;
+            }
+
+            .footer_col1_subcsribe_container {
+                display: none;
+            }
+
+            .footer_col2_rib1 {
+                width: 100% !important;
+            }
+
+            .footer_col2 {
+                width: 100% !important;
+            }
+
+            .footer_col2_rib2 {
+                width: 100%;
+                height: max-content;
+                padding-top: 5%;
+                background-color: #111111;
+            }
+
+            .footer_head_item_text h3 {
+                font-size: 60%;
+            }
+
+            .footer_head_item_text p {
+                font-size: 85%;
+            }
+
+            .footer_col2_rib2_map_container {
+                padding-left: 10%;
+                padding-right: 10%;
+            }
+
+            .footer_col2_rib2_map_container iframe {
+                border-bottom-left-radius: 0rem !important;
+            }
+
+            .footer_col2_footer_items_col {
+                text-align: center;
+            }
+
+            .footer_basement_holder {
+                width: 100%;
+                border-top-left-radius: 0rem;
+            }
+
+            .footer_basement_col1_rib1 a {
+                font-size: 70%;
+            }
+
+            .footer_basement_col1_rib2 a {
+                font-size: 70%;
+                width: 100%;
+            }
+
+            .footer_basement_col2 a {
+                font-size: 70%;
+            }
+
+            .footer_basement_col1_rib2 {
+                flex-direction: column;
+            }
+
+            .footer_basement_col1_rib1 {
+                justify-content: center;
+            }
+        }
+
+        @media screen and (max-width: 500px) {
+            .footer_head_item_text h4 {
+                font-size: 80%;
+                font-weight: bold;
+            }
+
+            .footer_col2_rib1 {
+                width: 100%;
+                height: 300px !important;
+                padding-top: 3%;
+                padding-bottom: 3%;
+            }
+
+            .footer_head_item_text {
+                padding-bottom: 6%;
+            }
+        }
+
+        @media screen and (max-width: 500px) {
+            .sub_subscribe_box {
+                width: 80%;
+            }
+
+            .footer_col2_rib1 {
+                padding-top: 9%;
+                padding-left: 12%;
+                padding-bottom: 9%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: start;
+                height: 220px;
+            }
+
+            .footer_head_item_text p {
+                width: 80%;
+            }
+        }
+
+        /* ============== CSS FOR FOOTER END ============== */
+    </style>
+</head>
+
+<body>
+
+    <div id="header-container">
+        <!-- The header content will be inserted here -->
+    </div>
+
+
+    <section class="admin_panel">
+
+
+
+        <section class="admin_sidebar_mobile">
+            <div class="admin_sidebar_mobile_sec">
+                <div class="admin_sidebar_mobile_career" onclick="showSection('career')">CAREERS</div>
+                <div class="admin_sidebar_mobile_products" onclick="showSection('products')">PRODUCTS</div>
+            </div>
+            <div class="admin_sidebar_mobile_sec1">
+                <div class="admin_sidebar_mobile_news" onclick="showSection('news')">NEWS/ BLOG</div>
+                <div class="admin_sidebar_mobile_projects" onclick="showSection('projects')">PROJECTS</div>
+            </div>
+            <div class="admin_sidebar_mobile_sec2">
+                <div class="admin_sidebar_mobile_reviews" onclick="showSection('reviews')">REVIEWS</div>
+                <div class="admin_sidebar_mobile_solutions" onclick="showSection('solutions')">SOLUTIONS</div>
+            </div>
+            <div class="admin_sidebar_mobile_sec3">
+                <div class="admin_sidebar_mobile_logout" onclick="logoutUser()">Log Out</div>
+            </div>
+        </section>
+
+        <section class="admin_sidebar">
+            <div class="admin_sidebar_logo">
+                <div class="admin_sidebar_logo_img">
+                    <i class="bi bi-person-circle"></i>
+                </div>
+                <h3>Admin</h3>
+            </div>
+            <div class="admin_sidebar_sec">
+                <div class="admin_sidebar_careers" onclick="showSection('career')">CAREERS</div>
+                <div class="admin_sidebar_products" onclick="showSection('products')">PRODUCTS</div>
+                <div class="admin_sidebar_news" onclick="redirectToBlogAdmin()">NEWS/ BLOG</div>
+                <div class="admin_sidebar_projects" onclick="showSection('projects')">PROJECTS</div>
+                <div class="admin_sidebar_reviews" onclick="showSection('reviews')">REVIEWS</div>
+                <div class="admin_sidebar_solutions" onclick="showSection('solutions')">SOLUTIONS</div>
+                <div class="admin_sidebar_logout" onclick="logoutUser()">Log Out</div>
+            </div>
+        </section>
+
+
+
+
+
+        <section class="admin_career">
+            <div class="admin_career_section">
+                <div class="admin_career_input">
+                    <div class="row">
+                        <div class="admin_career_sec">
+                            <div class="admin_career_sec1">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
+                                    <input id="job_name" type="text" placeholder="Job Title">
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
+                                    <div class="education_level_container">
+                                        <select id="education_level" onchange="checkAddNewEducationOption()">
+                                            <option value="" disabled selected>Education Level</option>
+                                            <option value="Graduation">Graduation</option>
+                                            <option value="Post Graduation">Post Graduation</option>
+                                            <option value="Diploma">Diploma</option>
+                                            <option value="add_new"
+                                                style="color: #E62B00; font-family: Poppins, sans-serif;">Add New
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="admin_career_sec1">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
+                                    <div class="job_location_container">
+                                        <select id="job_location" onchange="checkAddNewLocationOption()">
+                                            <option value="" disabled selected>Job Location</option>
+                                            <option value="Oman">Oman</option>
+                                            <option value="add_new_location"
+                                                style="color: #E62B00; font-family: Poppins, sans-serif;">Add New
+                                                Location</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
+                                    <div class="job_shift_container">
+                                        <select id="job_shift" onchange="checkAddNewShiftOption()">
+                                            <option value="" disabled selected>Job Shift</option>
+                                            <option value="Day shift">Day shift</option>
+                                            <option value="Night shift">Night shift</option>
+                                            <option value="add_new_shift"
+                                                style="color: #E62B00; font-family: Poppins, sans-serif;">Add New Shift
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="admin_career_sec1">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
+                                    <div class="position_type_container">
+                                        <select id="position_type" onchange="checkAddNewPositionOption()">
+                                            <option value="" disabled selected>Position Type</option>
+                                            <option value="Full Time">Full Time</option>
+                                            <option value="Part Time">Part Time</option>
+                                            <option value="Internship">Internship</option>
+                                            <option value="Fresher">Fresher</option>
+                                            <option value="add_new_position"
+                                                style="color: #E62B00; font-family: Poppins, sans-serif;">Add New
+                                                Position Type</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
+                                    <input id="job_category" type="text" placeholder="Job Category"
+                                        oninput="showCategorySuggestions()">
+                                    <div id="categorySuggestions" class="suggestions-container"></div>
+                                </div>
+
+                            </div>
+                            <div class="admin_career_sec2">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                    <p><span style="color: azure; font-family: Poppins; font-size: 90%;" ,
+                                            sans-serif;>Job Description</p>
+                                    <div id="job_description" class="editor-container"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="admin_career_button">
+                    <button id="saveCareer" type="button">Save</button>
+                    <button id="clear_form" type="button">Clear form</button>
+                </div>
+            </div>
+            <div class="admin_career_table">
+                <table id="vacancy_table">
+                    <thead>
+                        <tr>
+                            <th class="col-job-name">Job Title</th>
+                            <th>Education Level</th>
+                            <th>Job Location</th>
+                            <th>Job Shift</th>
+                            <th>Position Type</th>
+                            <th>Job Category</th>
+                            <th>Job Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Modal for job description -->
+        <div id="jobDescriptionModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Job Description</h2>
+                <div id="modalJobDescription"></div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <section class="admin_right">
+            <div class="admin_right_input">
+                <!-- Input fields for adding/editing products -->
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                        <input id="product_name" type="text" placeholder="Product Name">
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                        <textarea placeholder="Product Details" id="product_details" rows="2"></textarea>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                        <input id="product_image" type="file">
+                        <input id="product_image_url" type="text" placeholder="Product Image URL" disabled>
+                        <div id="progress-container" style="display: none;">
+                            <progress id="upload-progress" value="0" max="100"></progress>
+                            <span id="progress-percentage"></span>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                        <button style="width: 60%; padding: 3% 6%;" id="save" type="submit">Save</button>
+                    </div>
+                </div>
+            </div>
+            <!-- <button id="save" type="submit">Save</button> -->
+
+            <!-- Search Bar -->
+            <div class="search-bar">
+                <input type="text" id="searchInput" onkeyup="searchProducts()" placeholder="Search for products...">
+            </div>
+            <div id="products_container">
+                <table id="products_table">
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Product Details</th>
+                            <th>Product Image</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Table rows will be dynamically added here -->
+                    </tbody>
+                </table>
+
+            </div>
+        </section>
+
+
+        <section class="admin_project">
+            <div class="admin_project_input">
+                <!-- Input fields for adding/editing projects -->
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                        <input id="project_name" type="text" placeholder="Project Name">
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                        <textarea placeholder="Project Details" id="project_details" rows="2"></textarea>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                        <input id="project_image" type="file">
+                        <input id="project_image_url" type="text" placeholder="Project Image URL" disabled>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                        <button style="width: 60%; padding: 3% 6%;" id="save_project" type="submit">Save</button>
+                    </div>
+                </div>
+
+            </div>
+            <!-- <button id="save_project" type="submit">Save</button> -->
+
+            <!-- Search Bar -->
+            <div class="search-bar">
+                <input type="text" id="searchProjectInput" onkeyup="searchProjects()"
+                    placeholder="Search for projects...">
+            </div>
+            <div id="projects_container">
+                <table id="projects_table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Details</th>
+                            <th>Image</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Table rows will be dynamically added here -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+
+
+
+        <section class="admin_reviews">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 reviews_table_area">
+                    <!-- <button class="admin_searchButtton"
+                        onclick="refreshPendingReviewsTable(), refreshApprovedReviewsTable()"><i
+                            class="fa-solid fa-arrows-rotate"></i>&nbsp;&nbsp;Refresh Table</button> -->
+                    <button onclick="window.location.href='index.html#home_review_img3'" class="admin_searchButtton">ADD
+                        NEW</button>
+
+                    <div class="reviewToggler">
+                        <button class="reviewTogglerPending" onclick="showPendingReviews()">
+                            Under Review
+                        </button>
+                        <button class="reviewTogglerApproved" onclick="showApprovedReviews()">
+                            Published
+                        </button>
+                    </div>
+                    <div class="reviews_table_wrapper">
+                        <div class="pending_reviews_table_area">
+                            <!-- rewiews Table will appear here -->
+                        </div>
+                        <div class="approved_reviews_table_area">
+                            <!-- rewiews Table will appear here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="admin_solutions" style="display:none;">
+            <div class="admin_solutions_input">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                        <input id="solutions_name" type="text" placeholder="Solution Name">
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                        <textarea placeholder="Solution Description" id="solutions_description" rows="2"></textarea>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                        <input id="solutions_image" type="file">
+                        <input id="solutions_image_url" type="text" placeholder="Solution Image URL" disabled>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                        <button style="width: 60%; padding: 3% 6%;" id="save_solutions" type="submit">Save</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Solutions Table -->
+            <div id="solutions_container">
+                <table id="solutions_table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Image</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Table rows will be dynamically added here -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+
+
+
+
+
+    </section>
+
+
+
+
+
+
+
+
+
+    <footer>
+        <div class="footer_container">
+            <div class="row">
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-0 col-xs-0 footer_col1">
+                    <div class="footer_col1_rib1"></div>
+                    <div class="footer_col1_rib2"></div>
+                    <div class="footer_col1_subcsribe_container">
+                        <img src="img/footer_mail.webp" alt="">
+                        <br>
+                        <br>
+                        <h3>
+                            Sign up for industry <br>
+                            alerts, news & insights
+                        </h3>
+                        <p>Email address:</p>
+                        <input type="email" id="emailInput1">
+                        <br>
+                        <div class="subs_but">
+                            <button onclick="subscribe('emailInput1')">SUBSCRIBE</button>
+                            <button onclick="downloadEmails()">Download Emails</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-xs-12 footer_col2">
+                    <div class="footer_col2_rib1">
+                        <div class="footer_head_item1">
+                            <img src="img/home_header_img-1.webp" alt="">
+                            <div class="footer_head_item_text">
+                                <h4>OUR LOCATION</h4>
+                                <p>Powerkey International LLC, <br>
+                                    PO Box No 449, Postal Code 119,
+                                    Ghala, Muscat, Oman.</p>
+                            </div>
+                        </div>
+                        <div class="footer_head_item">
+                            <img src="img/home_header_img-2.webp" alt="">
+                            <div class="footer_head_item_text">
+                                <h4>E-MAIL ADDRESS</h4>
+                                <a href="tel:+96822544509">+ 968 24218333</a>
+
+                            </div>
+                        </div>
+                        <div class="footer_head_item">
+                            <img src="img/home_header_img-3.webp" alt="">
+                            <div class="footer_head_item_text">
+                                <h4>HOT LINE</h4>
+                                <a href="mailto:info@pk-int.com">info@pk-int.com</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer_col2_rib2">
+                        <div class="footer_col2_rib2_map_container">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14626.300445494524!2d58.3715374!3d23.5836988!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e8e01e802e5dc5f%3A0x6246663909e2e8b5!2sPower%20Key%20International%20LLC!5e0!3m2!1sen!2sin!4v1713612010902!5m2!1sen!2sin"
+                                width="100%" height="200" style="border:0; border-bottom-left-radius: 4rem;"
+                                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                        <div class="footer_col2_footer_items">
+                            <div class="row">
+                                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-12 footer_col2_footer_items_col">
+                                    <h3>ABOUT PKI</h3>
+                                    <a href="about.html">Overview</a>
+                                    <a href="index.html#home_vision_sec">Vision Mission & Values</a>
+                                </div>
+                                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-12 footer_col2_footer_items_col">
+                                    <h3>OUR SERVICES</h3>
+                                    <a href="services/oil-and-gas-well-services.html">Oil & Gas Well Services</a>
+                                    <a href="services/supply-chain-services.html">Supply Chain Services</a>
+                                    <a href="services/energy-environmental-techand-chemical-solutions.html">Energy,
+                                        Environmental Tech & Chemical Solutions</a>
+                                    <a href="services/construction-and-maintenance-services.html">Construction &
+                                        Maintenance Services</a>
+                                    <a href="services/manpower-supply-services.html">Manpower Supply Services</a>
+                                </div>
+                                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-12 footer_col2_footer_items_col">
+                                    <h3>COMPANY POLICIES</h3>
+                                    <a href="QHSE-policy.html">QHSE Policy</a>
+                                    <a href="social-responsibility.html">Social Responsibility</a>
+                                    <a href="career.html">Career</a>
+                                    <a href="">Compliance</a>
+                                </div>
+                                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-12 footer_col2_footer_items_col">
+                                    <h3>ADDRESS</h3>
+                                    <a href="">Powerkey International LLC, <br>
+                                        PO Box No 449, <br>
+                                        Postal Code 119,
+                                        Ghala, Muscat, Oman.<br><br>
+                                        Email: info@pk-int.com <br>
+                                        Tel: + 968 24218333</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sub_subscribe_container">
+                <h4>Sign up for industry alerts, news & insights</h4>
+                <div class="sub_subscribe_box">
+                    <input type="email" id="emailInput2">
+                    <button onclick="subscribe('emailInput2')">SUBSCRIBE</button>
+                    <button onclick="downloadEmails()">Download Emails</button>
+
+                </div>
+            </div>
+            <!-- Admin Download Button -->
+            <!-- <div>
+                <button onclick="downloadEmails()">Download Emails</button>
+            </div> -->
+            <div class="footer_basement_container">
+                <div class="footer_basement_holder">
+                    <div class="row">
+                        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-xs-12 footer_basement_col1">
+                            <div class="footer_basement_col1_rib1">
+                                <a href="html-sitemap.html">SITE MAP &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</a>
+                                <a href="login.html">LOGIN &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</a>
+                                <a href="terms-and-conditions.html">TERMS AND CONDITIONS&nbsp; &nbsp; &nbsp; &nbsp;
+                                    &nbsp; &nbsp;</a>
+                                <a href="privacy-policy.html">PRIVACY POLICY</a>
+                            </div>
+                            <div class="footer_basement_col1_rib2">
+                                <a href="index.html">© 2024 Power Key International. All Rights Reserved.&nbsp; &nbsp;
+                                    &nbsp;
+                                    &nbsp; &nbsp; &nbsp;</a>
+
+
+                            </div>
+
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 footer_basement_col2_sec">
+                            <div class="footer_basement_col2">
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-twitter"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
+                                <a href=""><i class="bi bi-youtube"></i></a>
+                            </div>
+                            <div class="footer_basement_col2">
+                                <a href="">Designed and Developed by: Illford Digital</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
+    <!-- Import the Firebase core (always required) -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
+    <!-- Import only the Firebase database module -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase.js"></script>
+
+    <script src="js/AdminToggler.js"></script>
+    <script src="js/fireconfig.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/credentials.js"></script>
+    <script src="js/admin_solutions.js"></script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+
+    <!--header and footer script start-->
+
+    <script>
+        function includeHTML(filePath, targetElement) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', filePath, true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    targetElement.insertAdjacentHTML('beforebegin', xhr.responseText);
+                }
+            };
+            xhr.send();
+        }
+        var headerPath = 'header.html';
+        var headerContainer = document.getElementById('header-container');
+        includeHTML(headerPath, headerContainer);
+
+        var xhrFooter = new XMLHttpRequest();
+        xhrFooter.open('GET', footerPath, true);
+        xhrFooter.onreadystatechange = function () {
+            if (xhrFooter.readyState === 4 && xhrFooter.status === 200) {
+                document.body.insertAdjacentHTML('beforeend', xhrFooter.responseText);
+            }
+        };
+        xhrFooter.send();
+    </script>
+
+    <!--header and footer script end-->
+
+
+
+
+
+</body>
+
+</html>
